@@ -1,14 +1,29 @@
 #root {
   height: 100%;
-  --colorMain: #2b2b2b
+  --colorBg: #2b2b2b;
+  --colorInputBg: #585858;
+  --colorInputText: #e1e1e1;
+  --colorInputBorder: #737373;
 }
 
 .app {
   height: 100%;
-  background: var(--colorMain);
+  background: var(--colorBg);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+input {
+  color: var(--colorInputText) !important;
+  background: var(--colorInputBg) !important;
+  border: 1px solid var(--colorInputBorder) !important;
+}
+
+.ant-select-selector {
+  color: var(--colorInputText) !important;
+  background: var(--colorInputBg) !important;
+  border: 1px solid var(--colorInputBorder) !important;
 }
 
 .wrapper {
