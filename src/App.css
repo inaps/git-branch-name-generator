@@ -44,3 +44,16 @@ input {
 .inputResult {
   /*width: 300px !important;*/
 }
+
+.ant-select-arrow {
+  color: white !important;
+}
+
+.ant-select-clear {
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.ant-select-clear:hover {
+  background: #ffffff;
+}

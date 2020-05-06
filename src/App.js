@@ -19,15 +19,6 @@ const handleInput = (e, setParsedTicket) => {
   localStorage.setItem(STORE_KEYS.parsedTicket, parsedTicket)
 }
 
-const handleForceInput = (e, setParsedTicket) => {
-  const {value} = e.target;
-  localStorage.setItem(STORE_KEYS.ticket, value)
-  
-  const parsedTicket = value.replace(/ /g, "_")
-  setParsedTicket(parsedTicket)
-  localStorage.setItem(STORE_KEYS.parsedTicket, parsedTicket)
-}
-
 const handleSelect = (prefix, setPrefix) => {
   let value = ""
   if (prefix !== undefined) {
@@ -39,9 +30,9 @@ const handleSelect = (prefix, setPrefix) => {
 
 function App() {
   const [parsedTicket, setParsedTicket] = useState(localStorage.getItem(STORE_KEYS.parsedTicket))
-  const [prefix, setPrefix] = useState(localStorage.getItem(STORE_KEYS.prefix) || "")
-  const result = `${prefix}${parsedTicket}`
-  
+  const [prefix, setPrefix] = useState(localStorage.getItem(STORE_KEYS.prefix))
+  const result = `${prefix ? prefix : ""}${parsedTicket ? parsedTicket : ""}`
+
   return (
     <div className="app">
       <div className="wrapper">
@@ -49,7 +40,7 @@ function App() {
           className="input"
           defaultValue={localStorage.getItem(STORE_KEYS.ticket)}
           onChange={e => handleInput(e, setParsedTicket)}
-          placeholder="Insert your ticket here"
+          placeholder="Insert ticket here"
         />
         <div className="result">
           <Select
@@ -62,7 +53,7 @@ function App() {
             <Option value="bug">bug</Option>
             <Option value="feature">feature</Option>
           </Select>
-          <Input className="inputResult" value={result} onChange={handleForceInput} />
+          <Input className="inputResult" value={result} placeholder="Result" />
         </div>
       </div>
     </div>
