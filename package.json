@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage" : "https://inaps.github.io/git-branch-name-generator",
   "eslintConfig": {
     "extends": "react-app"
   },
