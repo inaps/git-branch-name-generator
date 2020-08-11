@@ -1,0 +1,27 @@
+$clrBg: #2b2b2b;
+$clrText: #eeeeee;
+$clrBgInput: #585858;
+$clrBorder: #737373;
+
+$font-family-roboto: 'Roboto', sans-serif;
+
+.app {
+  height: 100%;
+  background: $clrBg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .result {
+    height: 72px;
+    width: 600px;
+    border-radius: 4px;
+    outline: none;
+    color: $clrText;
+    font-size: 14px;
+    background: $clrBgInput;
+    resize: none;
+    font-family: $font-family-roboto;
+    border: 1px solid $clrBorder;
+  }
+}
