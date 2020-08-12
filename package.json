@@ -1,6 +1,6 @@
 {
   "name": "git-branch-name-generator",
-  "version": "1.0",
+  "version": "1.1",
   "private": true,
   "dependencies": {
     "node-sass": "^4.14.1",
