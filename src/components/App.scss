@@ -17,25 +17,24 @@ $font-family-roboto: 'Roboto', sans-serif;
 
     .form {
       display: flex;
-      margin-left: -166px;
       margin-top: 16px;
 
       .selectType {
-        width: 150px;
+        flex-shrink: 0;
+        width: 140px;
         margin-right: 16px;
       }
     }
 
     .input {
-      height: 72px;
+      height: 38px;
       width: 600px;
-      padding: 10px;
-      resize: none;
+      padding: 0 10px;
       outline: none;
       color: $clrText;
+      font-family: monospace;
       font-size: 14px;
       border-radius: 4px;
-      word-break: break-all;
       background: $clrBgInput;
       border: 1px solid $clrBorder;
       transition: border-color 0.1s;
@@ -51,5 +50,9 @@ $font-family-roboto: 'Roboto', sans-serif;
       &::placeholder {
         color: $clrPlaceholder;
       }
+    }
+
+    .result {
+      width: 100%;
     }
 }

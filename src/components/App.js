@@ -89,7 +89,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="contentWrapper">
-           <textarea
+           <input
              className="input"
              onChange={this.handleInput}
              placeholder="Task title"
@@ -107,7 +107,7 @@ class App extends React.Component {
               defaultValue={this.type}
               onChange={this.handleSelect}
             />
-            <textarea className="input" value={this.result} placeholder="Parsed result" />
+            <input className="input result" value={this.result} placeholder="Parsed result" />
           </div>
         </div>
       </div>
