@@ -12,8 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install
-        run: npm install
+      - name: install serve
+        run: npm install -g serve
       - name: build
         run: npm run build
       - name: serve
