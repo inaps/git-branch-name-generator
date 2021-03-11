@@ -15,6 +15,17 @@ $font-family-roboto: 'Roboto', sans-serif;
   flex-direction: column;
   justify-content: center;
 
+  .inputWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    .label {
+      width: 80px;
+      color: $clrText;
+    }
+  }
+
     .form {
       display: flex;
       margin-top: 16px;
@@ -28,7 +39,7 @@ $font-family-roboto: 'Roboto', sans-serif;
 
     .input {
       height: 38px;
-      width: 600px;
+      width: 760px;
       padding: 0 10px;
       outline: none;
       color: $clrText;
@@ -50,9 +61,5 @@ $font-family-roboto: 'Roboto', sans-serif;
       &::placeholder {
         color: $clrPlaceholder;
       }
-    }
-
-    .result {
-      width: 100%;
     }
 }

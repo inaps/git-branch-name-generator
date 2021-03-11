@@ -12,46 +12,58 @@ class App extends React.Component {
     taskTitle: localStorage.getItem(STORE_KEYS.taskTitle) || "",
     typeId: localStorage.getItem(STORE_KEYS.typeId),
   }
-  
+
   handleInput = (e) => {
     const {value: taskTitle} = e.target;
     localStorage.setItem(STORE_KEYS.taskTitle, taskTitle)
-    
+
     this.setState({
       taskTitle
     })
   }
-  
+
   handleSelect = type => {
     const {value: typeId} = type ? type : {};
     localStorage.setItem(STORE_KEYS.typeId, typeId);
-    
+
     this.setState({
       typeId
     })
   }
-  
+
   options = [
-    {value: "BUG", label: "bug"},
-    {value: "FEATURE", label: "feature"}
+    {value: "bugfix", label: "bugfix"},
+    {value: "feature", label: "feature"},
+    {value: "hotfix", label: "hotfix"},
+    {value: "subtask", label: "subtask"},
+    {value: "task", label: "task"},
   ]
-  
+
   get type() {
     return this.options.find(({value}) => value === this.state.typeId)
   }
-  
+
   get parsedTaskTitle() {
-    return this.state.taskTitle.trim().replace(/ /g, "_")
+    return this.state.taskTitle.trim()
+      .replace(/ /g, "-")
+      .replace('[FE]', "")
+      .replace(/-{2}/g, "-")
+      .replace(/[/\\+]/g, "-")
   }
-  
+
   get result() {
     return `${this.type ? `${this.type.label}/` : ""}${this.parsedTaskTitle ? this.parsedTaskTitle : ""}`
   }
-  
+
+  get commitMessage() {
+    return this.state.taskTitle.trim().replace('[FE]', ":").replace(" : ", ": ").replace(" :", ": ")
+  }
+
+
   get defaultTaskTitle() {
     return localStorage.getItem(STORE_KEYS.taskTitle)
   }
-  
+
   customStyles = {
     control: (styles, {isFocused}) => ({
       ...styles,
@@ -84,30 +96,42 @@ class App extends React.Component {
       },
     })
   }
-  
+
   render() {
     return (
       <div className="app">
         <div className="contentWrapper">
-           <input
-             className="input"
-             onChange={this.handleInput}
-             placeholder="Task title"
-             defaultValue={this.defaultTaskTitle}
-           />
-          <div className="form">
-            <Select
-              isClearable
-              placeholder="Type"
-              isSearchable={false}
-              menuPosition="fixed"
-              className="selectType"
-              styles={this.customStyles}
-              options={this.options}
-              defaultValue={this.type}
-              onChange={this.handleSelect}
+          <div className="inputWrapper">
+            <div className="label">Origin</div>
+            <input
+              className="input"
+              onChange={this.handleInput}
+              placeholder="Task title"
+              defaultValue={this.defaultTaskTitle}
             />
-            <input className="input result" value={this.result} placeholder="Parsed result" />
+          </div>
+          <div className="form">
+            <div className="inputWrapper">
+              <div className="label">type</div>
+              <Select
+                placeholder="Type"
+                isSearchable={false}
+                menuPosition="fixed"
+                className="selectType"
+                styles={this.customStyles}
+                options={this.options}
+                defaultValue={this.type}
+                onChange={this.handleSelect}
+              />
+            </div>
+          </div>
+          <div className="inputWrapper">
+            <div className="label">branch</div>
+            <input className="input result" value={this.result} placeholder="Branch name" />
+          </div>
+          <div className="inputWrapper">
+            <div className="label">commit</div>
+            <input className="input result" value={this.commitMessage} placeholder="Commit message" />
           </div>
         </div>
       </div>
