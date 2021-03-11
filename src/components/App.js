@@ -47,8 +47,8 @@ class App extends React.Component {
     return this.state.taskTitle.trim()
       .replace(/ /g, "-")
       .replace('[FE]', "")
+      .replace(/[/\\+!,]/g, "-")
       .replace(/-{2}/g, "-")
-      .replace(/[/\\+]/g, "-")
   }
 
   get result() {
