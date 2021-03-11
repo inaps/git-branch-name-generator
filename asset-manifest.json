@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/git-branch-name-generator/static/css/main.bb6a66dd.chunk.css",
+    "main.js": "/git-branch-name-generator/static/js/main.fe66a382.chunk.js",
+    "main.js.map": "/git-branch-name-generator/static/js/main.fe66a382.chunk.js.map",
+    "runtime-main.js": "/git-branch-name-generator/static/js/runtime-main.ea134831.js",
+    "runtime-main.js.map": "/git-branch-name-generator/static/js/runtime-main.ea134831.js.map",
+    "static/js/2.67d958e9.chunk.js": "/git-branch-name-generator/static/js/2.67d958e9.chunk.js",
+    "static/js/2.67d958e9.chunk.js.map": "/git-branch-name-generator/static/js/2.67d958e9.chunk.js.map",
+    "index.html": "/git-branch-name-generator/index.html",
+    "precache-manifest.33a62539156121386a798193e071865f.js": "/git-branch-name-generator/precache-manifest.33a62539156121386a798193e071865f.js",
+    "service-worker.js": "/git-branch-name-generator/service-worker.js",
+    "static/css/main.bb6a66dd.chunk.css.map": "/git-branch-name-generator/static/css/main.bb6a66dd.chunk.css.map",
+    "static/js/2.67d958e9.chunk.js.LICENSE.txt": "/git-branch-name-generator/static/js/2.67d958e9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea134831.js",
+    "static/js/2.67d958e9.chunk.js",
+    "static/css/main.bb6a66dd.chunk.css",
+    "static/js/main.fe66a382.chunk.js"
+  ]
+}
